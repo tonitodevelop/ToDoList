@@ -1,0 +1,19 @@
+<div class="list-todo">
+    
+    <mat-checkbox #checkbox (change)="onSelectItemChange($event, item!)"
+         name="todoListCheckBox{{item!.id}}" >{{ item!.title }} </mat-checkbox>
+        <div class="spacer"></div>
+
+        <a routerLink="list/{{item?.id}}">
+            <mat-icon class="action" color="danger">settings</mat-icon>
+        </a>
+        <mat-icon class="action" color="info" (click)="onEditTodoList(item)">edit_document</mat-icon>
+
+    
+</div>
+<mat-list>
+    <mat-list-item *ngFor="let elem of item?.items">
+        <span matListItemTitle> {{elem.title}} </span>
+        <span matListItemLine> {{elem.description}} </span>
+    </mat-list-item>
+</mat-list>

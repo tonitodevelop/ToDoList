@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Lista de Tareas</span>
+    <span class="spacer"></span>
+
+    <ng-container *ngIf="!isLogIn; else loginTemplate">
+        <a routerLink="auth/register">Registro</a>
+        <a routerLink="auth/login">Entrar</a>
+    </ng-container>
+</mat-toolbar>
+
+<ng-template #loginTemplate>
+    <mat-icon class="icon" aria-hidden="false" (click)="logout()">exit_to_app</mat-icon>
+</ng-template>

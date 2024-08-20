@@ -1,0 +1,16 @@
+<ng-container *ngIf="todoItems.length! > 0; else listTodoItemEmpty">
+    <button mat-button color="warn" (click)="onDeleteTodoItem(itemSelectedFromCheckBox)"
+        [hidden]="itemSelectedFromCheckBox.length <= 0">
+        <mat-icon color="warn">delete_sweep</mat-icon> Eliminar</button>
+    <button mat-button color="success" (click)="onChangeToCompleted(itemPendingSelectedFromCheckBox)"
+        [hidden]="itemPendingSelectedFromCheckBox.length <= 0">
+        <mat-icon color="success">done_all</mat-icon> Completada</button>
+
+    <ng-container *ngFor="let item of todoItems">
+        <app-item [item]="item" (itemCheck)="checkedCheckBox($event!,item.id)"></app-item>
+    </ng-container>
+
+</ng-container>
+<ng-template #listTodoItemEmpty>
+    <h4 class="empty">* La lista {{todoList?.title}} no cuenta con tareas asociadas!</h4>
+</ng-template>

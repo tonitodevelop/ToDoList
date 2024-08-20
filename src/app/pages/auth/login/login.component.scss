@@ -1,0 +1,25 @@
+mat-card{
+    max-width: 360px;
+    margin: 5rem auto;
+    text-align: center;
+}
+mat-card-header{
+    display: unset;
+}
+
+mat-card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+mat-form-field{
+    display: block;
+    min-width: 330px;
+    width: 100%;
+}
+
+span.login-error{
+    margin-top: 1rem;
+    color: #f44336;
+}

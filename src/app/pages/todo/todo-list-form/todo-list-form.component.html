@@ -1,0 +1,10 @@
+<form [formGroup]="todoListForm" (ngSubmit)="onSubmitList()" #todoListFormDirective="ngForm" novalidate>
+    <mat-form-field>
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title" />
+        <mat-error *ngIf="title!.hasError('required')">
+            El título es <strong>requerido</strong>
+        </mat-error>
+    </mat-form-field>
+    <button mat-button type="submit" color="primary" [disabled]="todoListForm.invalid">{{ btnText }}</button>
+</form>

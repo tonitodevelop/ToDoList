@@ -1,0 +1,13 @@
+<ng-container *ngIf="items.length > 0 else todoListEmpty">
+    <button mat-button color="warn" (click)="onDeleteTodoList(todoSelected)" [hidden]="todoSelected.length <= 0">
+        <mat-icon color="warn">delete_sweep</mat-icon> Eliminar</button>
+
+
+    <section *ngFor="let todo of items">
+        <app-list-item [item]="todo" (itemCheck)="checkedCheckBoxList($event, todo.id)"></app-list-item>
+    </section>
+</ng-container>
+
+<ng-template #todoListEmpty>
+    <h4 class="empty">* Usted no cuenta con listas de tareas pendientes!</h4>
+</ng-template>

@@ -1,0 +1,17 @@
+<form [formGroup]="itemForm" #itemFormDirective="ngForm" (submit)="onSubmitTodoItem()" novalidate>
+    <mat-form-field>
+        <mat-label>Título</mat-label>
+        <input type="text" matInput formControlName="title">
+        <mat-error *ngIf="title!.hasError('required')">
+            El título es <strong>requerido</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Descripción<noscript></noscript></mat-label>
+        <input type="text" matInput formControlName="description">
+        <mat-error *ngIf="description!.hasError('required')">
+            La descripción es <strong>requerida</strong>
+        </mat-error>
+    </mat-form-field>
+    <button mat-button color="primary" type="submit" [disabled]="itemForm.invalid">{{ btnText }}</button>
+</form>

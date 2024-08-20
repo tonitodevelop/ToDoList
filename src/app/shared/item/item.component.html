@@ -1,0 +1,11 @@
+<section class="list-todo">
+
+    <mat-checkbox (change)="onSelectItemChange($event, item!)" name="itemCheckBox{{item!.id}}">{{ item!.title }} {{
+        item!.description }}</mat-checkbox>
+    <div class="spacer"></div>
+
+    <mat-icon color="success" *ngIf="item!.isCompleted">done_all</mat-icon>
+
+    <mat-icon class="action" color="info" (click)="onEditTodoItem(item!)">edit_document</mat-icon>
+
+</section>

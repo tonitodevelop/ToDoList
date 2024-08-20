@@ -1,0 +1,11 @@
+<div class="todo-container">
+    <div class="navigation">
+        <a class="back" routerLink="/todo" color="primary"><span>Atrás</span></a>
+    </div>
+
+    <h4>{{ todoListDetail?.title }}</h4>
+
+    <app-todo-item-details [todoListId]="todoListId"></app-todo-item-details>
+
+    <app-todo-item-form [todoListId]="todoListId"></app-todo-item-form>
+</div>

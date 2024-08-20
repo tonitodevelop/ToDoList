@@ -1,0 +1,22 @@
+.icon {
+    padding: 0 14px;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0.3rem;
+
+    font-size: medium;
+  }
+
+  a:hover{
+    opacity: 0.7;
+  }
+
+  mat-icon.icon:hover{
+    cursor: pointer;
+  }
